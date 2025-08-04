@@ -1,0 +1,37 @@
+# Enable URL rewriting
+RewriteEngine On
+RewriteBase /
+
+# 🔒 Disable directory listing
+Options -Indexes
+
+# 🚫 Deny access to schema files
+<FilesMatch "\.schema\.json$">
+    Require all denied
+</FilesMatch>
+
+# 🚫 Deny access to users.json
+<Files "users.json">
+    Require all denied
+</Files>
+
+# ✅ Only allow fetch.php to access JSON files
+<FilesMatch "\.json$">
+    Require all denied
+</FilesMatch>
+
+<Files "fetch.php">
+    Require all granted
+</Files>
+
+# 🔄 Optional route alias: /add → adddata.php
+RewriteRule ^add$ adddata.php [L]
+
+# 🔄 Pretty URL: /something → something.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
+
+# 🔐 Optional: Force HTTPS (uncomment to enable)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

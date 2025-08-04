@@ -1,0 +1,14 @@
+[
+    {
+        "userid": "aheM3NDHAOXcC6Xw",
+        "username": "admn",
+        "email": "bsns123@gmail.com",
+        "password": "$2y$10$CAI0oJJREKeHbXYTluZYZeLjWwemYLAMAjlhU0vx9sfKkwdv.8WBO",
+        "pin": "4321",
+        "apikey": "2fd6d86db912dae0",
+        "created_at": "2025-08-02 14:18:22",
+        "pin_attempts": 4,
+        "pin_timeout": 1754198481,
+        "member": "yes"
+    }
+]
