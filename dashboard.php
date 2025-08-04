@@ -710,7 +710,7 @@ let currentCodeFilename = '';
 
 function handleFilenameClick(token, filename, isPrivate) {
     if (isPrivate) {
-        const url = `http://localhost/`;
+        const url = `/`;
         window.open(url, '_self');
     } else {
         showFileLink(filename);
@@ -1466,4 +1466,5 @@ function saveConfiguration() {
 }
 </script>
 </body>
+
 </html>
